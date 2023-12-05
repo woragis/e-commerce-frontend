@@ -1,20 +1,34 @@
 import { Link } from "react-router-dom";
-// eslint-disable-next-line
-import { HeaderContainer, Logo, Nav, NavigationLink, StyledHeader } from "./style";
-import { headerLinksType } from "../../types/headerLinks.type";
+import { useSelector } from "react-redux";
+import { Logo, StyledHeader, StyledNav, StyledNavLinks, StyledSearchBar } from "./style";
 import { headerLinks } from "./headerData";
-
-// redux:
-import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "../../redux/themeSlice";
-
-type RootState = {
-  theme: {
-    theme: string;
-  };
-};
+import { headerLinksType } from "../../types/headerLinks.type";
+import ThemeButton from "../ThemeButton";
 
 const Header = () => {
+  const unloggedUserLinks = [
+    { title: "register", path: "/register" },
+    { title: "login", path: "/login" },
+  ];
+  const loggedUserLinks = [{ title: "logout", path: "logout" }];
+
+  interface userType {
+    user: {
+      logged: boolean;
+    };
+  }
+  const userLogged = useSelector((state: userType) => state.user.logged);
+
+  const chosenLinks = userLogged ? loggedUserLinks : unloggedUserLinks;
+
+  const userLinks = chosenLinks.map(({ title, path }: headerLinksType) => {
+    return (
+      <li key={title}>
+        <Link to={path}>{title.toUpperCase()}</Link>
+      </li>
+    );
+  });
+
   const headerNav = headerLinks.map(({ title, path }: headerLinksType) => {
     return (
       <li key={title}>
@@ -23,20 +37,17 @@ const Header = () => {
     );
   });
 
-  const dispatch = useDispatch();
-  const themeValue = useSelector((state: RootState) => state.theme.theme);
-
   return (
     <StyledHeader>
-      <Nav>
-        <Logo>Your Logo</Logo>
-
-        <div>
-          <ul>{headerNav}</ul>
-        </div>
-      </Nav>
-      <p>Theme: {themeValue}</p>
-      <button onClick={() => dispatch(toggleTheme())}>Toggle theme</button>
+      <StyledNav>
+        <Logo>E Commerce Name</Logo>
+        <StyledSearchBar></StyledSearchBar>
+        <StyledNavLinks>
+          {headerNav}
+          {userLinks}
+          <ThemeButton />
+        </StyledNavLinks>
+      </StyledNav>
     </StyledHeader>
   );
 };

@@ -1,17 +1,16 @@
-import React from "react";
 import { SocialMedia, StyledCopyright, StyledFooter, StyledDescription } from "./style";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   const socialMedia = [
-    { title: "github", path: "www.github.com/woragis", icon: <FaGithub /> },
-    { title: "linkedin", path: "www.linkedin.com/woragis", icon: <FaLinkedin /> },
-    { title: "instagram", path: "www.instagram.com/y.jezreel.andrade", icon: <FaInstagram /> },
+    { title: "github", path: "https://www.github.com/woragis", icon: <FaGithub /> },
+    { title: "linkedin", path: "https://www.linkedin.com/woragis", icon: <FaLinkedin /> },
+    { title: "instagram", path: "https://www.instagram.com/y.jezreel.andrade", icon: <FaInstagram /> },
   ];
   const socialMediaComponent = socialMedia.map(({ title, path, icon }) => {
     return (
       <li key={title}>
-        <a href={path}>
+        <a href={path} target='_blank' rel='noreferrer'>
           {icon} {title.toUpperCase()}
         </a>
       </li>

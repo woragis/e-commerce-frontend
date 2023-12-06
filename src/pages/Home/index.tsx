@@ -1,23 +1,39 @@
 import React from "react";
 import { StoreItem } from "../../components/Item";
+import { StoreStyling, StyledHomePage } from "./style";
+import SlideBox from "../../components/SlideBox";
+
+const Store = () => {
+  interface storeItemType {
+    name: string;
+    price: number;
+    old_price: number;
+  }
+
+  const sampleItems: storeItemType[] = [
+    { name: "Playstation 5", price: 4500, old_price: 6000 },
+    { name: "Playstation 5 Digital Edition", price: 3500, old_price: 5000 },
+    { name: "Xbox Series X", price: 4500, old_price: 5000 },
+    { name: "Xbox Series S", price: 3000, old_price: 3500 },
+    { name: "Pc Gamer Ryzen 5", price: 3500, old_price: 4000 },
+    { name: "Pc Gamer I5 13400", price: 4000, old_price: 4500 },
+    { name: "Pc Gamer I3 11100F RTX1060", price: 2900, old_price: 3000 },
+    { name: "Pc Gamer I5 8400", price: 2000, old_price: 2100 },
+    { name: "Pc Gamer I7 12700", price: 3500, old_price: 5000 },
+    { name: "Pc Gamer I9 14900k", price: 5500, old_price: 6000 },
+  ];
+
+  const sampleStore = sampleItems.map(({ name, price, old_price }: storeItemType) => {
+    return <StoreItem key={name} name={name} price={price} old_price={old_price} />;
+  });
+  return <StoreStyling>{sampleStore}</StoreStyling>;
+};
 
 const Home = () => {
   return (
-    <div>
-      <StoreItem name='Playstation 5' price={344090} old_price={449990} />
-      <StoreItem name='Playstation 5' price={899} old_price={1600} />
-      <h1>Projcets</h1>
-      <h3>Desktop usage</h3>
-      <p>Text editor in Rust</p>
-      <h3>Web</h3>
-      <p>Landing Page</p>
-      <p>E-commerce</p>
-      <h3>Android</h3>
-      <strong>Useful Apps</strong>
-      <p>App de treino de academia</p>
-      <p>Todo app</p>
-      <small>usar o auth</small>
-    </div>
+    <StyledHomePage>
+      <SlideBox />
+    </StyledHomePage>
   );
 };
 

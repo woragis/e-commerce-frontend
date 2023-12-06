@@ -1,0 +1,36 @@
+<h2>Free Plataforms for hosting my webapp</h2>
+      <h3>Free Frontend Hosting for a React App</h3>
+      <ul>
+        <li>Netlify</li>
+        <li>Vercel</li>
+        <li>Github Pages</li>
+        <li>AWS S3 (AWS Amplify or AWS CloudFront</li>
+      </ul>
+      <h3>Free Backend Hosting for Node.js/Express Server</h3>
+      <ul>
+        <li>Heroku</li>
+        <li>AWS Elastic Beanstalk</li>
+        <li>Digital Ocean App</li>
+        <li>Microsoft Azure App Service</li>
+        <li>Google Cloud Plataform (App Engine or Computer Engine)</li>
+      </ul>
+      <h3>Free Hosting Service for my Mongoose Database</h3>
+      <ul>
+        <li>MongoDB Atlas</li>
+        <li>Amazon DocumentDB</li>
+        <li>Microsoft Azure Cosmos DB</li>
+        <li>Google Cloud Firestore</li>
+        <li>Compose for MongoDB</li>
+      </ul>
+      <h3>Free Image Cloud Storage</h3>
+      <ul>
+        <li>Amazon S3 (AWS Free Tier)</li>
+        <li>Google Cloud Storage (GCP Free Tier)</li>
+        <li>Microsoft Azure Blob Storage (Azure Free Account)</li>
+        <li>
+          <strong>Backblaze B2 Cloud Storage (B2 Free Tier)</strong>
+        </li>
+        <li>IBM Cloud Object Storage (Lite Plan)</li>
+      </ul>
+
+            <h2>Fix fonts and make the "fine" font apply only to items in the store</h2>

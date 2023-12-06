@@ -1,6 +1,6 @@
 import React from "react";
 import { StoreItem } from "../../components/Item";
-import { StoreStyling, StyledHomePage, ColorsSample } from "./style";
+import { StoreStyling, StyledHomePage } from "./style";
 import SlideBox from "../../components/SlideBox";
 import PromoItems from "../../components/PromoItems";
 
@@ -35,6 +35,7 @@ const Home = () => {
     <StyledHomePage>
       <SlideBox />
       <PromoItems />
+      <Store />
     </StyledHomePage>
   );
 };

@@ -1,7 +1,8 @@
 import React from "react";
 import { StoreItem } from "../../components/Item";
-import { StoreStyling, StyledHomePage } from "./style";
+import { StoreStyling, StyledHomePage, ColorsSample } from "./style";
 import SlideBox from "../../components/SlideBox";
+import PromoItems from "../../components/PromoItems";
 
 const Store = () => {
   interface storeItemType {
@@ -33,6 +34,7 @@ const Home = () => {
   return (
     <StyledHomePage>
       <SlideBox />
+      <PromoItems />
     </StyledHomePage>
   );
 };

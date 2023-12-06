@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import { RootState } from "../../types/redux.type";
 import { useSelector } from "react-redux";
 import { Logo, StyledHeader, StyledNav, StyledNavLinks, StyledSearchBar } from "./style";
 import { headerLinks } from "./headerData";
 import { headerLinksType } from "../../types/headerLinks.type";
 import ThemeButton from "../ThemeButton";
+import SearchBar from "../SearchBar";
 
 const Header = () => {
   const unloggedUserLinks = [
@@ -12,12 +14,7 @@ const Header = () => {
   ];
   const loggedUserLinks = [{ title: "logout", path: "logout" }];
 
-  interface userType {
-    user: {
-      logged: boolean;
-    };
-  }
-  const userLogged = useSelector((state: userType) => state.user.logged);
+  const userLogged = useSelector((state: RootState) => state.user.logged);
 
   const chosenLinks = userLogged ? loggedUserLinks : unloggedUserLinks;
 
@@ -41,7 +38,9 @@ const Header = () => {
     <StyledHeader>
       <StyledNav>
         <Logo>E Commerce Name</Logo>
-        <StyledSearchBar></StyledSearchBar>
+        <StyledSearchBar>
+          <SearchBar />
+        </StyledSearchBar>
         <StyledNavLinks>
           {headerNav}
           {userLinks}

@@ -1,21 +1,29 @@
 const lightTheme = {
   title: "light",
-  colors: {
-    main: {
-      background: "#E6F7FF", // Light blue for the main background
-      text: "#1A1A1A", // Dark blue for text color
-      accent: "#66A3FF", // Accent blue for main elements
+  background: {
+    color: {
+      main: "#89AAE6",
+      secondary: "#FFF",
     },
-    secondary: {
-      background: "#B3D9FF", // Light blue for secondary background
-      text: "#1A1A1A", // Dark blue for text color
-      accent: "#99C2FF", // Accent blue for secondary elements
+  },
+  text: {
+    color: "#000",
+    background: "#AC80A0",
+    dim: "#89AAE6",
+    important: "#FFF",
+  },
+  special: {
+    important: {
+      background: "#FFF",
+      color: "#07004D",
     },
-    text: {
-      background: "#fff", // White background for text
-      color: "#1A1A1A", // Dark blue for text color
-      dim: "#6B6B6B", // Dim blue for less important text
-      important: "#000", // Black for important text
+    warning: {
+      background: "#D6D61F",
+      color: "#000",
+    },
+    danger: {
+      background: "#D71D1D",
+      color: "#000",
     },
   },
 };

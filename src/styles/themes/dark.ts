@@ -1,21 +1,29 @@
 const darkTheme = {
   title: "dark",
-  colors: {
-    main: {
-      background: "#030303", // Dark background for the main background
-      text: "#fff", // White text color
-      accent: "#99C2FF", // Accent blue for main elements
+  background: {
+    color: {
+      main: "#000",
+      secondary: "#454545",
     },
-    secondary: {
-      background: "#454545", // Dark background for secondary background
-      text: "#fff", // White text color
-      accent: "#66A3FF", // Accent blue for secondary elements
+  },
+  text: {
+    color: "#FFF",
+    background: "#AC80A0",
+    dim: "#89AAE6",
+    important: "#000",
+  },
+  special: {
+    important: {
+      background: "#07004D",
+      color: "#FFF",
     },
-    text: {
-      background: "#1A1A1A", // Dark background for text
-      color: "#fff", // White text color
-      dim: "#959595", // Dim white for less important text
-      important: "#000", // Black for important text
+    warning: {
+      background: "#D6D61F",
+      color: "#000",
+    },
+    danger: {
+      background: "#D71D1D",
+      color: "#000",
     },
   },
 };

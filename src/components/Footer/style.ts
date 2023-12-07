@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
-  background-color: ${props => props.theme.background.color.secondary};
-  color: ${props => props.theme.text.color};
+  background-color: ${props => props.theme.background.color.neutral};
+  p,
+  a,
+  strong {
+    color: ${props => props.theme.text.color};
+  }
   height: 200px;
   width: 100%;
 
@@ -11,6 +15,16 @@ export const StyledFooter = styled.footer`
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: ${props => props.theme.background.color.main};
+  }
 `;
 
 export const SocialMedia = styled.section`

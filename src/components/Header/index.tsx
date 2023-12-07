@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { RootState } from "../../types/redux.type";
 import { useSelector } from "react-redux";
-import { Logo, StyledHeader, StyledNav, StyledNavLinks, StyledSearchBar } from "./style";
+import { Logo, StyledHeader, StyledNav, StyledNavLinks } from "./style";
 import { headerLinks } from "./headerData";
 import { headerLinksType } from "../../types/headerLinks.type";
 import ThemeButton from "../ThemeButton";
@@ -38,9 +38,7 @@ const Header = () => {
     <StyledHeader>
       <StyledNav>
         <Logo>E Commerce Name</Logo>
-        <StyledSearchBar>
-          <SearchBar />
-        </StyledSearchBar>
+        <SearchBar />
         <StyledNavLinks>
           {headerNav}
           {userLinks}

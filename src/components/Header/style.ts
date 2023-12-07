@@ -6,10 +6,11 @@ export const StyledHeader = styled.header`
   left: 0;
   z-index: 10;
 
-  // White or Black
-  background-color: ${props => props.theme.background.color.main};
-  // Black or White
+  background-color: ${props => props.theme.background.color.neutral};
   color: ${props => props.theme.text.color};
+  a {
+    color: ${props => props.theme.text.color};
+  }
   height: 60px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
@@ -24,7 +25,6 @@ export const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
 `;
-export const StyledSearchBar = styled.section``;
 
 export const StyledNavLinks = styled.ul`
   display: flex;
@@ -54,17 +54,15 @@ export const StyledNavLinks = styled.ul`
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      color: ${props => props.theme.text.color};
-      color: ${props => props.theme.background.color.secondary};
     }
   }
   li:hover {
-    background-color: ${props => props.theme.background.color.secondary};
+    background-color: ${props => props.theme.text.background};
     a {
-      color: ${props => props.theme.background.color.main};
+      color: ${props => props.theme.text.color};
       &::after {
         content: "";
-        background-color: ${props => props.theme.background.color.secondary};
+        background-color: ${props => props.theme.text.background};
         height: 3px;
         width: 80%;
         border-radius: 10px;
@@ -76,5 +74,8 @@ export const StyledNavLinks = styled.ul`
 `;
 
 export const Logo = styled.h1`
+  display: flex;
   margin: 0;
+  padding: 0 40px;
+  align-items: center;
 `;

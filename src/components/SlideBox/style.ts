@@ -1,31 +1,57 @@
 import styled from "styled-components";
 
 export const StyledSlideBox = styled.article`
-  height: 500px;
+  height: 360px;
   width: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  background-color: ${props => props.theme.background.color.neutral};
   z-index: 4;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 30%;
+    height: 1px;
+    background-color: ${props => props.theme.text.color};
+  }
+  &::before {
+    left: 0;
+  }
+  &::after {
+    right: 0;
+  }
 `;
-
+export const Slide = styled.div<{ $slideUrl: string; $slideName: string }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  text-align: center;
+  background-image: url(${props => props.$slideUrl});
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  position: relative;
+  &::before {
+    content: ${props => props.$slideName};
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+`;
 export const Slides = styled.section`
   margin: 30px 0;
-  .slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 440px;
-    text-align: center;
-    border: 1px solid blue;
-    background-image: linear-gradient(${props => props.theme.background.color.secondary}, ${props => props.theme.background.color.main});
-  }
   .main-slide {
     background-color: rgba(0, 255, 0, 0.5);
     margin: 0 auto;
-    border: 1px solid red;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
@@ -60,11 +86,11 @@ export const SlideNavigation = styled.nav`
   align-items: center;
   grid-gap: 5px;
   z-index: 8;
-  background-color: ${props => props.theme.background.color.secondary};
+  background-color: ${props => props.theme.background.color.neutral};
   border: 1px solid ${props => props.theme.background.color.main};
 
   .button {
-    background-color: ${props => props.theme.background.color.main};
+    background-color: ${props => props.theme.background.color.secondary};
     height: 20px;
     width: 20px;
     border-radius: 50%;

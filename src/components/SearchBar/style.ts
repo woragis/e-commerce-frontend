@@ -14,14 +14,14 @@ export const StyledSearchBar = styled.div`
     border: none;
     padding-left: 10px;
     font-size: 1em;
-    background-color: ${props => props.theme.background.color.secondary};
+    background-color: ${props => props.theme.text.background};
     color: ${props => props.theme.text.color};
 
     &::after {
       content: "";
       height: 50%;
       width: 5px;
-      background-color: ${props => props.theme.text.background};
+      background-color: ${props => props.theme.text.color};
       position: absolute;
       right: 0;
       z-index: 11;
@@ -38,8 +38,9 @@ export const StyledSearchBar = styled.div`
     transform: translate(0, -50%);
     background-color: white;
     outline: none;
-    background-color: ${props => props.theme.background.color.secondary};
+    background-color: ${props => props.theme.text.background};
     color: ${props => props.theme.text.color};
+    font-size: 1.1em;
     border: none;
 
     &::before {
@@ -53,8 +54,8 @@ export const StyledSearchBar = styled.div`
     }
 
     &:hover {
-      background-color: ${props => props.theme.background.color.main};
-      color: ${props => props.theme.background.color.secondary};
+      background-color: ${props => props.theme.text.color};
+      color: ${props => props.theme.text.background};
     }
   }
 `;

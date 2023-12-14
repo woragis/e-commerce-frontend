@@ -7,8 +7,8 @@ export const StyledThemeButton = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: ${props => props.theme.background.color.secondary};
-  border: 4px solid ${props => props.theme.background.color.secondary};
+  color: ${props => props.theme.text.color};
+  border: 4px solid ${props => props.theme.text.color};
   border-radius: 50%;
   margin-right: 10px;
 `;

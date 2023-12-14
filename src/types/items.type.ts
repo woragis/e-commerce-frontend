@@ -4,6 +4,7 @@ export interface slideBoxProps {
 }
 
 export interface promoItemProps {
+  id: number;
   title: string;
   img: string;
 }

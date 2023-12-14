@@ -7,7 +7,6 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     list-style-type: none;
     text-decoration: none;
-    transition: 1s;
   }
 `;
 

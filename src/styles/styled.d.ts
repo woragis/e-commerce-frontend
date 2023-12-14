@@ -7,13 +7,20 @@ declare module "styled-components" {
       color: {
         main: string;
         secondary: string;
+        body: string;
+        neutral: string;
       };
     };
     text: {
       color: string;
       background: string;
+      contrast: string;
+
       dim: string;
       important: string;
+    };
+    store: {
+      green: string;
     };
     special: {
       important: {
